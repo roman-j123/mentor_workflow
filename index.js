@@ -15,7 +15,6 @@ const generateArray = (len, symb = '') => {
 
 // Напиши функцию, которая разворачивает массив в обратном порядке.
 // В аргумент функции передается массив [1, 2, 3] должны вернуть  [3, 2, 1]
-
 const reverseArray = (array = []) => {
   const result = [];
   if (array.length === 0) {
@@ -30,7 +29,6 @@ const reverseArray = (array = []) => {
 
 // Напиши функцию, которая очищает массив от нежелательных значений, таких как false, undefined, пустые строки, ноль, null.
 // Ожидаемый результат: [0, 1, false, 2, undefined, '', 3, null] => [1, 2, 3]
-
 const filterArray = (array = []) => {
   const result = [];
   if (array.length === 0) {
@@ -45,3 +43,22 @@ const filterArray = (array = []) => {
   }
   return result;
 }
+
+// Напиши функцию, которая складывает все элементы 
+//массива чисел и возвращает результат [4, -1, 15] => 18
+const sumOfArray = (array = []) => {
+  let result = 0;
+  if (array.length === 0) {
+    console.log('Ошибка, Вы не задали массив');
+    return;
+  }
+  
+  for (const item of array) {
+    console.log(typeof item)
+    if (typeof item === 'number') {
+      result = result + item;
+    }
+  }
+  return result;
+}
+sumOfArray([4, -1, 'b', 15, null, undefined])
