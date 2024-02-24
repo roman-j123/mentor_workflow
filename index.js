@@ -13,4 +13,17 @@ const generateArray = (len, symb = '') => {
   return result;
 }
 
-generateArray(3, 'a');
+//Напиши функцию, которая разворачивает массив в обратном порядке.
+//В аргумент функции передается массив [1, 2, 3] должны вернуть  [3, 2, 1]
+
+const reverseArray = (array = []) => {
+  const result = [];
+  if (array.length === 0) {
+    console.log('Ошибка, Вы не задали массив');
+    return;
+  }
+  for (let i = array.length - 1; i >= 0; i--) {
+    result.push(array[i])
+  }
+  return result;
+}
