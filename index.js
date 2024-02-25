@@ -1,3 +1,18 @@
+// KEY_VALUE: Вернуть массив пар, вложенными массивами вида [[key, value], [key, value]].
+// Аргумент: Объект
+// Ожидаемый результат: ({ a: 1, b: 2 }) => [['a', 1], ['b', 2]]
+const KEY_VALUE = (obj = {}) => {
+  if (Object.keys(obj).length === 0) {
+    return 'Ошибка, объект не может быть пустым';
+  }
+  const result = [];
+  for(const key in obj) {
+    const pushItem = [key, obj[key]];
+    result.push(pushItem)
+  }
+  return result;
+}
+
 // Напиши функцию, которая заполняет новый массив предоставленным значением.
 // В аргументах передается количество элементов и элемент, которым надо заполнить массив (3, 'a') => ['a', 'a', 'a']
 const generateArray = (len, symb = '') => {
@@ -61,4 +76,3 @@ const sumOfArray = (array = []) => {
   }
   return result;
 }
-sumOfArray([4, -1, 'b', 15, null, undefined])
