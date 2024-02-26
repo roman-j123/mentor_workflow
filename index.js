@@ -80,6 +80,23 @@ const filterArray = (array = []) => {
   return result;
 }
 
+// Напиши функцию, которая убирает повторяющиеся значения в массиве.
+// Ожидаемый результат: [1, 2, 3, 1, 2] => [1, 2, 3]
+const removeDoublesInArray = (array = []) => {
+  const obj = {};
+  const result = [];
+  if (array.length === 0) {
+    return 'Ошибка, пустой массив'
+  }
+  for (const item of array) {
+    obj[item] = true;
+  }
+  for (const key in obj) {
+    result.push(+key);
+  }
+  return result;
+}
+
 // Напиши функцию, которая складывает все элементы 
 //массива чисел и возвращает результат [4, -1, 15] => 18
 const sumOfArray = (array = []) => {
@@ -87,8 +104,7 @@ const sumOfArray = (array = []) => {
   if (array.length === 0) {
     console.log('Ошибка, Вы не задали массив');
     return;
-  }
-  
+  }  
   for (const item of array) {
     console.log(typeof item)
     if (typeof item === 'number') {
