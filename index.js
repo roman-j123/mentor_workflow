@@ -13,6 +13,20 @@ const KEY_VALUE = (obj = {}) => {
   return result;
 }
 
+// DELETE_OF_PROPERTY: Вернуть новый объект без указанных значений.
+// Аргумент: Объект и название свойств, которые нужно удалить
+// Ожидаемый результат: ({ a: 1, b: 2 }, 'b') => { a: 1 }
+const DELETE_OF_PROPERTY = (obj, key) => {
+  const copyOfObject = {};
+  for (const item in obj) {
+    copyOfObject[item] = obj[item]
+    if (item === key) delete copyOfObject[item];
+  }
+  return copyOfObject;
+}
+
+DELETE_OF_PROPERTY({ a: 1, b: 2 });
+
 // Напиши функцию, которая заполняет новый массив предоставленным значением.
 // В аргументах передается количество элементов и элемент, которым надо заполнить массив (3, 'a') => ['a', 'a', 'a']
 const generateArray = (len, symb = '') => {
