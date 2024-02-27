@@ -86,6 +86,34 @@ const filterArray = (array = []) => {
   return result;
 }
 
+// Проверить строку на палиндром (строка читается в прямом и обратном направлении одинаково). Для облегчения условий считаем, что в строке нет пробелов и знаков препинания
+// Например: А роза упала на лапу Азора — палиндром 
+// Возвращаем тру, если палиндром и форс, если нет
+const checkPalindrom = (str) => {
+  const strLength = str.length;
+  
+  const stringToLowerCase = (value, reverse = false) => {
+    let result = ''
+    if(!reverse) {
+      for (let i = 0; i < value.length - 1; i++) {
+        if (str[i] === ' ') continue
+        result += value[i].toLowerCase();
+      } 
+    } else {
+      for (let i = value.length - 1; i > 0; i--) {
+        if (str[i] === ' ') continue
+        result += value[i].toLowerCase();
+      } 
+    }
+    return result;
+  }
+  
+  let originalString = stringToLowerCase(str);
+  let reverseString = stringToLowerCase(str, true);
+  
+  return originalString === reverseString ? true : false;
+}
+
 // Напиши функцию, которая убирает повторяющиеся значения в массиве.
 // Ожидаемый результат: [1, 2, 3, 1, 2] => [1, 2, 3]
 const removeDoublesInArray = (array = []) => {
