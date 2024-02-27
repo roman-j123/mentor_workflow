@@ -90,8 +90,6 @@ const filterArray = (array = []) => {
 // Например: А роза упала на лапу Азора — палиндром 
 // Возвращаем тру, если палиндром и форс, если нет
 const checkPalindrom = (str) => {
-  const strLength = str.length;
-  
   const stringToLowerCase = (value, reverse = false) => {
     let result = ''
     if(!reverse) {
